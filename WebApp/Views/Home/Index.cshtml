@@ -1,4 +1,6 @@
-﻿@{
+﻿@using WebApp Model
+@Model Proyector
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,12 +8,12 @@
 
     <div class="container">
         <div class="text-start">
-            <h2 class="display-6"> Proyector # @ViewBag.id </h2>
-            <p>Marca: @ViewBag.Marca</p>
-            <p>Modelo: @ViewBag.Modelo</p>
-            <p>Numero: de serie @ViewBag.Numero_de_Serie</p>
-            <p>Situacion: @ViewBag.Situacion</p>
-            <p>Fecha de alta: @ViewBag.FechaAlta</p>
+            <h2 class="display-6"> Proyector # @Model.id </h2>
+            <p>Marca: @Model.Marca</p>
+            <p>Modelo: @Model.Modelo</p>
+            <p>Numero: de serie @Model.NumeroDeSerie</p>
+            <p>Situacion: @Model.Situacion</p>
+            <p>Fecha de alta: @Model.FechDeAlta.ToString("d")</p>
         </div>
     </div>
 </div>
