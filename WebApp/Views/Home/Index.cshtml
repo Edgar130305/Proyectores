@@ -3,7 +3,16 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Bienvenidos</h1>
-    <p>Esta sera la pagina principal de la aplicacion</p>
-    <p>Autor:Edgar Yair Cauich Canul</p>
+
+    <div class="container">
+        <div class="text-start">
+            <h1 class="display-4">Informacion de proyectores</h1>
+            <h2 class="display-6"> Proyector # @ViewData["id"] </h2>
+            <p>Marca: @ViewData["Marca"]</p>
+            <p>Modelo: @ViewData["Modelo"]</p>
+            <p>Numero: de serie @ViewData["Numero de Serie"]</p>
+            <p>Situacion: @ViewData["Situacion"]</p>
+            <p>Fecha de alta: @ViewData["FechaAlta"]</p>
+        </div>
+    </div>
 </div>
