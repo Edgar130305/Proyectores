@@ -6,13 +6,12 @@
 
     <div class="container">
         <div class="text-start">
-            <h1 class="display-4">Informacion de proyectores</h1>
-            <h2 class="display-6"> Proyector # @ViewData["id"] </h2>
-            <p>Marca: @ViewData["Marca"]</p>
-            <p>Modelo: @ViewData["Modelo"]</p>
-            <p>Numero: de serie @ViewData["Numero de Serie"]</p>
-            <p>Situacion: @ViewData["Situacion"]</p>
-            <p>Fecha de alta: @ViewData["FechaAlta"]</p>
+            <h2 class="display-6"> Proyector # @ViewBag.id </h2>
+            <p>Marca: @ViewBag.Marca</p>
+            <p>Modelo: @ViewBag.Modelo</p>
+            <p>Numero: de serie @ViewBag.Numero_de_Serie</p>
+            <p>Situacion: @ViewBag.Situacion</p>
+            <p>Fecha de alta: @ViewBag.FechaAlta</p>
         </div>
     </div>
 </div>
