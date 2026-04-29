@@ -1,19 +1,44 @@
-﻿@using WebApp Model
-@Model Proyector
+﻿@model IEnumerable<Proyector>
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-
+@if (Model is not null)
+{
     <div class="container">
-        <div class="text-start">
-            <h2 class="display-6"> Proyector # @Model.id </h2>
-            <p>Marca: @Model.Marca</p>
-            <p>Modelo: @Model.Modelo</p>
-            <p>Numero: de serie @Model.NumeroDeSerie</p>
-            <p>Situacion: @Model.Situacion</p>
-            <p>Fecha de alta: @Model.FechDeAlta.ToString("d")</p>
-        </div>
+        <h1 class="display-4 text-center">Proyectores</h1>
+        <h3>Informacion de los proyectores registrados:</h3>
+        @if (Model.Any<Proyector>())
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>#proyector</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th># de serie</th>
+                        <th>Situación</th>
+                        <th>Fecha de alta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Proyector proyector in Model)
+                    {
+                        <tr>
+                            <td>@proyector.id</td>
+                            <td>@proyector.Marca</td>
+                            <td>@proyector.Modelo</td>
+                            <td>@proyector.NumeroDeSerie</td>
+                            <td>@proyector.Situacion</td>
+                            <td>@proyector.FechDeAlta.ToShortDateString()</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h4>No hay Proyectores Registrados </h4>
+        }
     </div>
-</div>
+}
